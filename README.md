@@ -1,2 +1,4 @@
 # Data_Science_ML
- Different topics studies.
+
+Personal repository to merge different machine learning knwolodges.
+Different topics studies and technics.
