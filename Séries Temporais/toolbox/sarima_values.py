@@ -4,6 +4,24 @@ from statsmodels.tsa.statespace.sarimax import SARIMAX
 from itertools import product
 
 def optimize_SARIMAX(endog: Union[pd.Series, list], order_list: list, d: int, D: int, s: int, suppress_warnings: bool = True) -> pd.DataFrame:
+    """
+    Example:
+    n=4
+    p = range(0, n, 1)
+    d = 1
+    q = range(0, n, 1)
+    P = range(0, n, 1)
+    D = 0
+    Q = range(0, n, 1)
+    s = 52
+    
+    parameters = product(p, q, P, Q)
+    parameters_list = list(parameters)
+
+    optimize_SARIMAX(endog=train['qtd_docs'], order_list=parameters_list,d=1,D=0,s=52,suppress_warnings=True);
+    """
+
+    
     results = []
     for order in tqdm_notebook(order_list):
         try:
